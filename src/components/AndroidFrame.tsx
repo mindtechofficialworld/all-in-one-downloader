@@ -15,7 +15,7 @@ import { SettingsScreen } from './SettingsScreen';
 import { Smartphone, Monitor } from 'lucide-react';
 
 export const AndroidFrame: React.FC = () => {
-  const { activeTab, viewMode, setViewMode } = useApp();
+  const { activeTab, viewMode, setViewMode, settingsSubPage } = useApp();
 
   return (
     <div className="min-h-screen bg-[#09090b] text-zinc-100 flex flex-col items-center justify-center p-0 md:p-4 select-none">
@@ -80,8 +80,8 @@ export const AndroidFrame: React.FC = () => {
           {activeTab === 'settings' && <SettingsScreen />}
         </div>
 
-        {/* Bottom Navigation */}
-        <BottomNavigation />
+        {/* Bottom Navigation (Hidden on dedicated sub-pages for native Android feel) */}
+        {!(activeTab === 'settings' && settingsSubPage !== 'main') && <BottomNavigation />}
 
         {/* Android Navigation Gesture Bar */}
         <div className="py-1.5 bg-zinc-950 flex justify-center pointer-events-none">

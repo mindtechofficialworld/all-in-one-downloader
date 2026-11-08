@@ -1,7 +1,7 @@
 import { DownloadTask, FormatOption, MediaMetadata, MediaType } from '../types';
 
-const STORAGE_KEY = 'all_in_one_downloads_v1';
-const SETTINGS_KEY = 'all_in_one_settings_v1';
+const STORAGE_KEY = 'all_in_one_downloads_v2';
+const SETTINGS_KEY = 'all_in_one_settings_v2';
 
 // Real sample public domain video streams and audio samples that can be streamed and played
 export const SAMPLE_STREAM_VIDEO = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
@@ -67,57 +67,8 @@ export function getInitialDownloads(): DownloadTask[] {
     }
   }
 
-  const initialList: DownloadTask[] = [
-    {
-      id: 'task_wedding_completed',
-      mediaId: 'media_wedding_init',
-      title: 'Laiba or osama ki shadi fainali rukhsati hogayi _ khubsurat lamhat',
-      originalUrl: 'https://youtu.be/m98kL2sY10A',
-      platform: 'YouTube',
-      thumbnailUrl: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="100%" height="100%"><defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%237c2d12"/><stop offset="100%" stop-color="%231e1b4b"/></linearGradient></defs><rect width="640" height="360" fill="url(%23g1)"/><circle cx="320" cy="180" r="45" fill="%23F59E0B" opacity="0.95"/><polygon points="310,162 340,180 310,198" fill="%23000"/></svg>',
-      fileType: 'video',
-      format: 'mp4',
-      quality: '720p',
-      totalSizeBytes: 61.0 * 1024 * 1024,
-      downloadedBytes: 61.0 * 1024 * 1024,
-      progressPercent: 100,
-      speedBytesPerSec: 0,
-      remainingSeconds: 0,
-      status: 'completed',
-      dateAdded: Date.now() - 3600 * 1000 * 4,
-      dateCompleted: Date.now() - 3600 * 1000 * 4 + 45000,
-      localFilePath: '/storage/emulated/0/Download/AllInOne/Laiba_or_osama_ki_shadi_720p.mp4',
-      mediaBlobUrl: SAMPLE_STREAM_VIDEO,
-      durationFormatted: '05:42',
-      durationSeconds: 342,
-    },
-    {
-      id: 'task_lofi_completed',
-      mediaId: 'media_lofi_init',
-      title: 'Midnight Melodies — Cozy Rainy Night Study & Relax Lofi Hop',
-      originalUrl: 'https://soundcloud.com/chillhopdotcom/rainy-night',
-      platform: 'YouTube',
-      thumbnailUrl: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="100%" height="100%"><defs><linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%234c1d95"/><stop offset="100%" stop-color="%2318181b"/></linearGradient></defs><rect width="640" height="360" fill="url(%23g3)"/><circle cx="320" cy="180" r="45" fill="%23A855F7" opacity="0.95"/><polygon points="310,162 340,180 310,198" fill="%23000"/></svg>',
-      fileType: 'audio',
-      format: 'mp3',
-      quality: '256 kbps',
-      totalSizeBytes: 7.6 * 1024 * 1024,
-      downloadedBytes: 7.6 * 1024 * 1024,
-      progressPercent: 100,
-      speedBytesPerSec: 0,
-      remainingSeconds: 0,
-      status: 'completed',
-      dateAdded: Date.now() - 3600 * 1000 * 24,
-      dateCompleted: Date.now() - 3600 * 1000 * 24 + 12000,
-      localFilePath: '/storage/emulated/0/Download/AllInOne/Midnight_Melodies_Classic_MP3.mp3',
-      mediaBlobUrl: SAMPLE_STREAM_AUDIO,
-      durationFormatted: '04:18',
-      durationSeconds: 258,
-    },
-  ];
-
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(initialList));
-  return initialList;
+  // Pure clean state with no mock/dummy files
+  return [];
 }
 
 export function saveDownloads(downloads: DownloadTask[]) {

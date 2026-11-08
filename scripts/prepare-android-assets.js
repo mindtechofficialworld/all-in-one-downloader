@@ -9,6 +9,10 @@ const sourceDir = path.resolve(__dirname, '../dist');
 const targetDir = path.resolve(__dirname, '../android/app/src/main/assets/public');
 
 function copyRecursiveSync(src, dest) {
+  const baseName = path.basename(src);
+  if (baseName === 'aistudio' || baseName.endsWith('.apk') || baseName.endsWith('.zip')) {
+    return;
+  }
   const exists = fs.existsSync(src);
   const stats = exists && fs.statSync(src);
   const isDirectory = exists && stats.isDirectory();
@@ -31,9 +35,10 @@ if (!fs.existsSync(sourceDir)) {
   process.exit(1);
 }
 
-if (!fs.existsSync(targetDir)) {
-  fs.mkdirSync(targetDir, { recursive: true });
+if (fs.existsSync(targetDir)) {
+  fs.rmSync(targetDir, { recursive: true, force: true });
 }
+fs.mkdirSync(targetDir, { recursive: true });
 
 copyRecursiveSync(sourceDir, targetDir);
 console.log('✅ Web assets successfully copied to android/app/src/main/assets/public!');
