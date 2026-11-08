@@ -1,0 +1,26 @@
+{
+  "name": "All in One Downloader",
+  "short_name": "Downloader",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#121212",
+  "description": "Download videos and music from YouTube, TikTok, Facebook, Instagram, X and more.",
+  "icons": [
+    {
+      "src": "/app_icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}

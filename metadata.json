@@ -1,0 +1,6 @@
+{
+  "name": "All in One Downloader",
+  "description": "Professional Android video and audio downloader with native Share Sheet integration, format selection, and built-in media player.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

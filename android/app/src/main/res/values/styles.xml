@@ -1,0 +1,11 @@
+<resources>
+    <!-- Base application theme -->
+    <style name="Theme.AllInOneDownloader" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Status bar and navigation bar colors -->
+        <item name="android:statusBarColor">#111114</item>
+        <item name="android:navigationBarColor">#09090b</item>
+        <item name="android:windowBackground">#111114</item>
+        <item name="colorPrimary">#F59E0B</item>
+        <item name="colorSecondary">#EAB308</item>
+    </style>
+</resources>
